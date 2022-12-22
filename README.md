@@ -1,6 +1,6 @@
 ## Google Cloud Platform - Sabre project
 ### Architecture
-![](project_arch.png)
+![](diagram.png)
 
 The goal of project is to make several GCP services work together. 
 
