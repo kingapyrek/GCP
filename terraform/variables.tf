@@ -1,12 +1,16 @@
 
 variable "region" {
-  default = "europe-west2"
+  default = "xxx"
 }
 
 variable "project" {
-  default = "###"
+  default = "xxx"
 }
 
 variable "config_json_path" {
-  default = "###"
+  default = "xxx/config.json"
+}
+
+variable "email" {
+  default = "example@gmail.com"
 }

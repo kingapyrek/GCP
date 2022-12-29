@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  credentials = "${file("/Users/kingapyrek/Downloads/complete-treat-371210-01eff99b8bdb.json")}"
+  credentials = "${file(var.config_json_path)}"
   region = var.region
   project = var.project
 }

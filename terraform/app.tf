@@ -66,7 +66,6 @@ resource "google_cloud_run_service" "default" {
   }
 
   autogenerate_revision_name = true
-  #depends_on                 = [null_resource.example1]
   depends_on                 = [null_resource.example1, google_secret_manager_secret.dbuser, google_secret_manager_secret.dbpass, google_secret_manager_secret.dbname, google_project_service.secretmanager_api, google_project_service.cloudrun_api, google_project_service.sqladmin_api, google_secret_manager_secret_iam_member.secretaccess_compute_dbpass, google_secret_manager_secret_iam_member.secretaccess_compute_dbuser, google_secret_manager_secret_iam_member.secretaccess_compute_dbname]
 }
 
@@ -82,7 +81,6 @@ data "google_iam_policy" "noauth" {
 
 resource "google_cloud_run_service_iam_policy" "noauth" {
   location    = google_cloud_run_service.default.location
-  #project     = google_cloud_run_service.default.project
   service     = google_cloud_run_service.default.name
 
   policy_data = data.google_iam_policy.noauth.policy_data
